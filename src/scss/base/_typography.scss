@@ -1,0 +1,100 @@
+@use "sass:map";
+@use "../abstracts" as a;
+
+$sides: (
+    "": "",
+    "bs": "block-start",
+    "be": "block-end",
+    "is": "inline-start",
+    "ie": "inline-end",
+    "y": "block",
+    "x": "inline",
+);
+
+$spaces: (
+    "0": 0 * a.$base-space,
+    "1": 0.5 * a.$base-space,
+    "2": 1 * a.$base-space,
+    "3": 2 * a.$base-space,
+    "4": 3 * a.$base-space,
+    "5": 4 * a.$base-space,
+    "6": 5 * a.$base-space,
+    "7": 6 * a.$base-space,
+    "8": 7 * a.$base-space,
+    "9": 8 * a.$base-space
+);
+
+$fs: (
+    "xxs": 1.4rem,
+    "xs": 1.6rem,
+    "sm": 1.9rem,
+    "md": 2.4rem,
+    "lg": 2.8rem,
+    "xl": 3.6rem,
+    "xxl": 3.6rem
+);
+
+@each $name, $value in $fs{
+    .text-#{$name}{
+        font-size: $value;
+    }
+}
+
+@mixin spacingClasses($prefix, $property){
+    
+    @each $space-name, $space-value in $spaces{
+
+        @each $side-name, $side-value in $sides{
+
+            .#{$prefix}#{$side-name}#{$space-name}{
+                
+                @if $side-name == ""{
+                    #{$property}: $space-value;
+                } @else {
+                    #{$property}-#{$side-value}: $space-value;
+                }
+                
+            }
+        }   
+    }
+}
+
+@include spacingClasses("p", "padding");
+@include spacingClasses("m", "margin");
+
+.text-center{
+    text-align: center;
+}
+
+.text-bold {
+    font-weight: 700;
+}
+
+.text-semibold {
+    font-weight: 600;
+}
+
+.text-normal {
+    font-weight: 400;
+}
+
+.text-upper {
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.text-lower{
+    text-transform: lowercase;
+}
+
+.text-capitalize{
+    text-transform: capitalize;
+}
+
+.text-underline {
+    text-decoration: underline;
+}
+
+.text-no-underline {
+    text-decoration: none;
+}

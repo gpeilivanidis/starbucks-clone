@@ -1,0 +1,12 @@
+@use '../abstracts' as a;
+
+body{
+    font-family: SoDoSans,Helvetica Neue,Helvetica,Arial,sans-serif;
+    font-size: 1.6rem;
+    color: a.$clr-neutral;
+    letter-spacing: -.01em;
+}
+
+.inline-block{
+    display: inline-block;
+}

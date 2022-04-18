@@ -1,0 +1,50 @@
+@use '../abstracts' as a;
+
+.navbar{
+    inline-size: 100%;
+    box-shadow: 0 1px 3px rgb(0 0 0 / 10%),
+    0 2px 2px rgb(0 0 0 / 6%),
+    0 0 2px rgb(0 0 0 / 7%);
+
+    li + li{
+        padding-inline-start: 2.4rem;
+    }
+}
+
+.navbar--container{
+    inline-size: 94%;
+    margin-inline: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar--left,
+.navbar--right,
+.navbar--links{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar--link{
+    &:hover{
+        color: a.$clr-primary;
+    }
+}
+
+.find-store{
+    font-weight: 600;
+    font-size: 1.4rem;
+    display: flex;
+    align-items: center;
+}
+
+.logo{
+    inline-size: 51px;
+    block-size: 51px;
+}
+
+.location-icon{
+    font-size: 2.2rem;
+}

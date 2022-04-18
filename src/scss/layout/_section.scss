@@ -1,0 +1,66 @@
+@use '../abstracts' as a;
+
+.section--container{
+    inline-size: 100%;
+}
+
+.info{
+    inline-size: 50%;
+}
+
+.img-banner{
+    inline-size: 50%;
+}
+
+.info--container{
+    block-size: 100%;
+    max-inline-size: 83%;
+    margin-inline: auto;
+}
+
+.section-a,
+.section-b,
+.section-c,
+.section-r,
+.section-f{
+    h2{
+        font-size: 50px;
+        letter-spacing: 2px;
+        line-height: 1.2;
+    }
+}
+
+.section-a{
+    background-color: a.$clr-primary-dark;
+    color: white;
+}
+
+.section-b{
+    background-color: a.$clr-primary-light;
+
+    h2{
+        color: a.$clr-primary-dark;
+    }
+}
+
+.section-c{
+    background-color: a.$clr-primary-dark;
+    color: white;
+}
+
+.section-d{
+    background-color: a.$clr-primary-dark;
+    color: white;
+}
+
+.section-e{
+    background-color: a.$clr-primary-light;
+    color: a.$clr-primary-dark;
+}
+
+.disclaimer{
+    inline-size: 100%;
+    box-shadow: 0 1px 3px rgb(0 0 0 / 10%),
+    0 2px 2px rgb(0 0 0 / 6%),
+    0 0 2px rgb(0 0 0 / 7%);
+}

@@ -1,0 +1,10 @@
+@mixin gridClasses($prefix, $property){
+    @for $i from 2 through 10{
+        .grid-#{$prefix}-#{$i}{
+            display: grid;
+            grid-template-#{$property}: repeat(#{$i}, 1fr);
+        }
+    }
+}
+
+@include gridClasses("col", "columns");
